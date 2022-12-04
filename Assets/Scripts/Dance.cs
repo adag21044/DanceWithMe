@@ -38,13 +38,22 @@
       }  
     }  
 
-    private void ChangeAnimation(ref bool direction, string animationId){
+    private void ChangeAnimation(ref bool direction, string animationId)
+    {
     
         direction = true;
         Animator.SetTrigger(animationId);   
     }
 
-    private void OnTouchBegan(Touch touch){
+    private void ChangeAnimationRandom(ref bool direction, string animationId)
+    {
+    
+        direction = true;
+        Animator.SetTrigger(animationId);   
+    }
+
+    private void OnTouchBegan(Touch touch)
+    {
         if (touch.phase == TouchPhase.Began)  // Hold start position of input
           {  
             fp = touch.position;  
@@ -52,14 +61,16 @@
           }  
     }
 
-    private void OnTouchMove(Touch touch){
+    private void OnTouchMove(Touch touch)
+    {
       if (touch.phase == TouchPhase.Moved)  // Update touch position
           {  
             lp = touch.position;  
           }  
     }
 
-    private void OnTouchFinish(Touch touch){
+    private void OnTouchFinish(Touch touch)
+    {
       if (touch.phase == TouchPhase.Ended) // Check input finishing 
           {            
             if (Mathf.Abs(lp.x - fp.x) > DragDistance || Mathf.Abs(lp.y - fp.y) > DragDistance)//  input happened ?   
@@ -83,17 +94,10 @@
                 }  
                 else // input to down 
                 {  
-                                     
-                 isS = true;
-              int x  = Random.Range(1,3);//This generate random numbers for choosing animation for Input.GetKey(KeyCode.S)
-            	 if(x == 1)
-            	 {
-                   Animator.SetTrigger("isS");
-           		 }
-            	 else
-          		 {
-               		Animator.SetTrigger("isS");
-           		 } 
+                 int x  = Random.Range(0,3);//This generate random numbers for choosing animation for Input.GetKey(KeyCode.S)
+            	   Animator.SetFloat("WhichAnimation",(float)x);
+
+                 ChangeAnimation(ref isW, "isW"); 
                 }  
               }  
             }  
