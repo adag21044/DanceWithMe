@@ -17,7 +17,7 @@
 
       void Start()
       {
-        
+
       }
 
      
@@ -26,22 +26,41 @@
     {  
         
 
-	    int x  = Random.Range(1,3);//This generate random numbers for choosing animation for Input.GetKey(KeyCode.S)
+
              
-        foreach (Touch touch in Input.touches)  
-        {  
-          if (touch.phase == TouchPhase.Began)  // Hold start position of input
+      foreach (Touch touch in Input.touches)  
+      {  
+        OnTouchBegan(touch);
+   
+        OnTouchMove(touch);
+   
+        OnTouchFinish(touch);
+      }  
+    }  
+
+    private void ChangeAnimation(ref bool direction, string animationId){
+    
+        direction = true;
+        Animator.SetTrigger(animationId);   
+    }
+
+    private void OnTouchBegan(Touch touch){
+        if (touch.phase == TouchPhase.Began)  // Hold start position of input
           {  
             fp = touch.position;  
             lp = touch.position;  
           }  
-   
-          if (touch.phase == TouchPhase.Moved)  // Update touch position
+    }
+
+    private void OnTouchMove(Touch touch){
+      if (touch.phase == TouchPhase.Moved)  // Update touch position
           {  
             lp = touch.position;  
           }  
-   
-          if (touch.phase == TouchPhase.Ended) // Check input finishing 
+    }
+
+    private void OnTouchFinish(Touch touch){
+      if (touch.phase == TouchPhase.Ended) // Check input finishing 
           {            
             if (Mathf.Abs(lp.x - fp.x) > DragDistance || Mathf.Abs(lp.y - fp.y) > DragDistance)//  input happened ?   
             {           
@@ -49,27 +68,24 @@
              {         
               if (lp.x > fp.x)  // input to left
               {  
-                   isD = true;
-                   Animator.SetTrigger("isA");                     
+                  ChangeAnimation(ref isA, "isA");                   
               }  
               else  // input to right
               {  
-                    isA = true;
-                    Animator.SetTrigger("isD");  
+                  ChangeAnimation(ref isD, "isD");  
               }  
              }  
              else // input direction on y coordinates 
              {                     
                 if (lp.y > fp.y) // input to up 
                 {  
-                                     
-                  isW = true;
-                  Animator.SetTrigger("isW");  
+                  ChangeAnimation(ref isW, "isW");                  
                 }  
                 else // input to down 
                 {  
                                      
                  isS = true;
+              int x  = Random.Range(1,3);//This generate random numbers for choosing animation for Input.GetKey(KeyCode.S)
             	 if(x == 1)
             	 {
                    Animator.SetTrigger("isS");
@@ -82,7 +98,6 @@
               }  
             }  
                      
-          }  
-        }  
-    }  
+          } 
+    }
 } 

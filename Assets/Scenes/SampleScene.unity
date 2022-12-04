@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DragDistance: 0
-  animator: {fileID: 233139002}
+  Animator: {fileID: 233139002}
   isS: 0
   isW: 0
   isD: 0
@@ -1280,7 +1280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DragDistance: 0
-  animator: {fileID: 979938971}
+  Animator: {fileID: 0}
   isS: 0
   isW: 0
   isD: 0
