@@ -57,7 +57,12 @@
         if (touch.phase == TouchPhase.Began)  // Hold start position of input
           {  
             fp = touch.position;  
-            lp = touch.position;  
+            lp = touch.position; 
+
+            isA = false;
+             isW = false;
+              isD = false;
+               isS = false;
           }  
     }
 
@@ -79,11 +84,11 @@
              {         
               if (lp.x > fp.x)  // input to left
               {  
-                  ChangeAnimation(ref isA, "isA");                   
+                  ChangeAnimation(ref isD, "isD");                   
               }  
               else  // input to right
               {  
-                  ChangeAnimation(ref isD, "isD");  
+                  ChangeAnimation(ref isA, "isA");  
               }  
              }  
              else // input direction on y coordinates 
@@ -97,7 +102,7 @@
                  int x  = Random.Range(0,3);//This generate random numbers for choosing animation for Input.GetKey(KeyCode.S)
             	   Animator.SetFloat("WhichAnimation",(float)x);
 
-                 ChangeAnimation(ref isW, "isW"); 
+                 ChangeAnimationRandom(ref isS, "isS"); 
                 }  
               }  
             }  

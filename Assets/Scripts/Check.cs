@@ -36,11 +36,14 @@ public class Check : MonoBehaviour
         scoreText.text = "Score " + score.ToString();
 
         
+
+        
        
     }
 
     void OnCollisionEnter(Collision col)
     {
+        
         if(d.isA == true && col.gameObject.tag == "arrowLeft")
         {
             score = score + 1;

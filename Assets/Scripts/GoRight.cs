@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoRight : MonoBehaviour
 {
     private Rigidbody rb;
-    public float force = 1.0f;
+    public float force = 10.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class GoRight : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.AddForce(new Vector3(force, 0.0f, 0.0f), ForceMode.Force);
+        rb.AddForce(new Vector3(force *Time.fixedDeltaTime , 0.0f, 0.0f), ForceMode.Force);
         
     }
 }
