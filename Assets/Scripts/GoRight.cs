@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoRight : MonoBehaviour
 {
     private Rigidbody rb;
-    public float force = 10.0f;
+    public float force = 100000.0f;
     // Start is called before the first frame update
     void Start()
     {
