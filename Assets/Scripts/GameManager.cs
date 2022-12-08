@@ -5,10 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameData gameData;
-    public int playerScore;
+    public int playerScore = 1;
+    
     private void Awake()
     {
         gameData = SaveSystem.Load();
+        
     }
 
     public void GameOver()
