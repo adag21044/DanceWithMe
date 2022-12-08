@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
+    public GameData gameData;
+    private void Awake()
+    {
+        gameData = SaveSystem.Load();
+    }
     public void Update()
     {
         if(Input.GetMouseButton(0))
