@@ -48,7 +48,7 @@ public class Timing : MonoBehaviour
     IEnumerator spawnArrow()
     {
         
-        while(1 == 1)
+        while(Check.live > 0)
         {
             
         x = Random.Range(0,4);

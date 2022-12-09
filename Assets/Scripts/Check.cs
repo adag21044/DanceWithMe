@@ -19,7 +19,7 @@ public class Check : MonoBehaviour
 
     public GameObject Z0;
     public GameObject Z1;
-    public int live = 3;
+    public static int live = 3;
 
     // Start is called before the first frame update
     void Start()
