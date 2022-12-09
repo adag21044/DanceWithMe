@@ -15,7 +15,7 @@ public class StartPlayIdle : MonoBehaviour
     void Update()
     {
         
-        anim.Play("Idle");
+        //anim.Play("Idle");
         
         
     }
