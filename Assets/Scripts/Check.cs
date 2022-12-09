@@ -24,7 +24,16 @@ public class Check : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
+        if(PlayerPrefs.HasKey("score"))
+        {
+            score = PlayerPrefs.GetInt("score");
+            scoreText.text = score.ToString();
+        }
+        else
+        {
+            PlayerPrefs.SetInt("score",0);
+            scoreText.text = PlayerPrefs.GetInt("score").ToString();
+        }
         
     }
 
