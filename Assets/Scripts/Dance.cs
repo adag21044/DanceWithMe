@@ -60,9 +60,9 @@
             lp = touch.position; 
 
             isA = false;
-             isW = false;
-              isD = false;
-               isS = false;
+            isW = false;
+            isD = false;
+            isS = false;
           }  
     }
 
