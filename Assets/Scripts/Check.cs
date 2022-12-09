@@ -100,6 +100,7 @@ public class Check : MonoBehaviour
                 GetRed(Z0, Z1);
                 d.Animator.SetBool("isFail", true);
                 Debug.Log("You Failed!");
+                PlayerPrefs.SetInt("score",score);
                 PlayerPrefs.Save();
             }
             
