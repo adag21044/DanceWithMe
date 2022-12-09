@@ -1673,7 +1673,7 @@ MonoBehaviour:
   Y1: {fileID: 1005124831}
   Z0: {fileID: 1675828215}
   Z1: {fileID: 170273893}
-  live: 3
+  timing: {fileID: 307814560}
 --- !u!54 &1058501138
 Rigidbody:
   m_ObjectHideFlags: 0

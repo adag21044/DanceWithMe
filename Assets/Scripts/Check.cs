@@ -19,11 +19,13 @@ public class Check : MonoBehaviour
 
     public GameObject Z0;
     public GameObject Z1;
+    public GameObject timing;
     public static int live = 3;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         if(PlayerPrefs.HasKey("score"))
         {
             score = PlayerPrefs.GetInt("score");
@@ -100,6 +102,7 @@ public class Check : MonoBehaviour
                 GetRed(Z0, Z1);
                 d.Animator.SetBool("isFail", true);
                 Debug.Log("You Failed!");
+                timing.SetActive(false);
                 PlayerPrefs.SetInt("score",score);
                 PlayerPrefs.Save();
             }

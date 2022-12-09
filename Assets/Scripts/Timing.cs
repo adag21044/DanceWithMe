@@ -15,8 +15,10 @@ public class Timing : MonoBehaviour
     public CapsuleCollider col;
     int x;
     
+    
     void Awake()
     {
+         
         spawnArea = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
     }
@@ -48,7 +50,7 @@ public class Timing : MonoBehaviour
     IEnumerator spawnArrow()
     {
         
-        while(Check.live > 0)
+        while(1 == 1)
         {
             
         x = Random.Range(0,4);
